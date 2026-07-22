@@ -19,7 +19,7 @@ return [
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => [env('FRONTEND_URL', 'http://localhost:5173'), 'https://boutik-orcin.vercel.app'],
+    'allowed_origins' => [env('FRONTEND_URL', 'http://localhost:5173'), 'http://localhost:5174', 'https://boutik-orcin.vercel.app'],
 
     'allowed_origins_patterns' => [],
 
@@ -29,6 +29,6 @@ return [
 
     'max_age' => 0,
 
-    'supports_credentials' => false,
+    'supports_credentials' => true,
 
 ];
