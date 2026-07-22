@@ -11,6 +11,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\StockMovementController;
 use App\Http\Controllers\Superadmin\ShopController;
+use App\Http\Controllers\Superadmin\StatsController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/health', fn () => response()->json(['ok' => true]));
@@ -58,4 +59,6 @@ Route::middleware('superadmin.auth')->prefix('superadmin')->group(function () {
     Route::post('/shops', [ShopController::class, 'store']);
     Route::put('/shops/{shop}', [ShopController::class, 'update']);
     Route::delete('/shops/{shop}', [ShopController::class, 'destroy']);
+
+    Route::get('/stats', [StatsController::class, 'index']);
 });
