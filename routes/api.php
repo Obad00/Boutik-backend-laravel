@@ -59,6 +59,7 @@ Route::middleware('superadmin.auth')->prefix('superadmin')->group(function () {
     Route::post('/shops', [ShopController::class, 'store']);
     Route::put('/shops/{shop}', [ShopController::class, 'update']);
     Route::delete('/shops/{shop}', [ShopController::class, 'destroy']);
+    Route::post('/shops/{shop}/reactivate', [ShopController::class, 'reactivate']);
 
     Route::get('/stats', [StatsController::class, 'index']);
 });

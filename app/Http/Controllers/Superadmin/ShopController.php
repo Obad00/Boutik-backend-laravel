@@ -116,4 +116,11 @@ class ShopController extends Controller
 
         return response()->json(['ok' => true]);
     }
+
+    public function reactivate(Shop $shop)
+    {
+        $shop->update(['is_active' => true]);
+
+        return response()->json($shop->fresh());
+    }
 }
