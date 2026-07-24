@@ -43,6 +43,16 @@ Le seeder crée :
 | Boutique SANDAGA | code `SANDAGA`, PIN admin `1234` |
 | Boutique THIES | code `THIES`, PIN admin `1234` |
 
+### Comptes superadmin de production
+
+`DemoDataSeeder` embarque un superadmin de démo — à ne pas utiliser en production. Pour provisionner les vrais comptes superadmin, séparément et sans toucher aux données de boutiques :
+
+```bash
+SUPERADMIN_PASSWORD_1=... SUPERADMIN_PASSWORD_2=... php artisan db:seed --class=SuperadminSeeder
+```
+
+Idempotent (relançable sans dupliquer ni faire tourner silencieusement un mot de passe déjà en place). Si les variables d'env sont omises lors de la création initiale, un mot de passe aléatoire est généré et affiché une seule fois dans la console — à noter immédiatement. Voir `database/seeders/SuperadminSeeder.php` pour le détail.
+
 ## Lancer le serveur
 
 ```bash
